@@ -1,0 +1,114 @@
+.section {
+  grid-column: span 12;
+  border-radius: 22px;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(15, 19, 30, 0.96), rgba(9, 12, 20, 0.98)) padding-box,
+    linear-gradient(135deg, rgba(109, 139, 255, 0.48), rgba(55, 215, 192, 0.16), rgba(255, 141, 92, 0.24)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
+}
+
+.active {
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8fa5ff;
+  margin-bottom: 6px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #f3f6ff;
+}
+
+.audioButton {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(18, 23, 38, 0.94), rgba(10, 13, 22, 0.96)) padding-box,
+    linear-gradient(135deg, rgba(109, 139, 255, 0.5), rgba(55, 215, 192, 0.22), rgba(255, 141, 92, 0.28)) border-box;
+  color: #edf2ff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.26);
+}
+
+.player {
+  border-radius: 18px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(109, 139, 255, 0.08), transparent 24%),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(132, 156, 255, 0.14);
+}
+
+.progressTrack {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6d8bff, #37d7c0, #ff8d5c);
+  transition: width 120ms linear;
+}
+
+.timeRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+  color: #8f9ab4;
+}
+
+.lyricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+}
+
+.lyricLine {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 4px solid rgba(109, 139, 255, 0.28);
+  background: rgba(255, 255, 255, 0.03);
+  color: #d5ddef;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, monospace;
+  line-height: 1.55;
+  border-radius: 0 12px 12px 0;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.activeLine {
+  background: rgba(109, 139, 255, 0.12);
+  border-color: #6d8bff;
+  transform: translateX(3px);
+  box-shadow: 0 10px 24px rgba(109, 139, 255, 0.12);
+}
+
+@media (max-width: 920px) {
+  .lyricsGrid {
+    grid-template-columns: 1fr;
+  }
+}

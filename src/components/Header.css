@@ -1,0 +1,76 @@
+.header {
+  max-width: 1180px;
+  margin: 0 auto 24px;
+  position: relative;
+  padding: 20px 16px 16px;
+  border-radius: 28px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(12, 16, 27, 0.92), rgba(8, 11, 19, 0.94)) padding-box,
+    linear-gradient(135deg, rgba(109, 139, 255, 0.56), rgba(55, 215, 192, 0.24), rgba(255, 141, 92, 0.3)) border-box;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+}
+
+.topRule,
+.bottomRule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(109, 139, 255, 0.85) 20%, rgba(255, 141, 92, 0.75) 50%, rgba(55, 215, 192, 0.8) 80%, transparent);
+}
+
+.masthead {
+  text-align: center;
+  padding: 18px 12px 14px;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: #8fa5ff;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  color: #f3f6ff;
+  text-shadow: 0 0 24px rgba(109, 139, 255, 0.18);
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: 12px auto 0;
+  font-size: 1rem;
+  color: #aeb8d0;
+}
+
+.stamp {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  color: #dce4ff;
+  background:
+    linear-gradient(180deg, rgba(16, 21, 35, 0.92), rgba(10, 13, 22, 0.9)) padding-box,
+    linear-gradient(135deg, rgba(109, 139, 255, 0.45), rgba(55, 215, 192, 0.2), rgba(255, 141, 92, 0.28)) border-box;
+  transform: rotate(2deg);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 720px) {
+  .stamp {
+    position: static;
+    width: fit-content;
+    margin: 0 auto 8px;
+    transform: rotate(-1deg);
+  }
+}

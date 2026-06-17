@@ -1,0 +1,49 @@
+.frame {
+  grid-column: span 5;
+}
+
+.polaroid {
+  height: 100%;
+  border-radius: 22px;
+  padding: 16px 16px 18px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(15, 19, 30, 0.96), rgba(9, 12, 20, 0.98)) padding-box,
+    linear-gradient(135deg, rgba(109, 139, 255, 0.48), rgba(55, 215, 192, 0.16), rgba(255, 141, 92, 0.24)) border-box;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
+  transform: rotate(-0.5deg);
+}
+
+.imageWrap {
+  aspect-ratio: 1 / 1;
+  border: 12px solid rgba(255, 255, 255, 0.04);
+  border-bottom-width: 44px;
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(109, 139, 255, 0.14), transparent 24%),
+    linear-gradient(180deg, rgba(13, 17, 28, 0.96), rgba(9, 12, 20, 0.98));
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  margin: 0px 6px 0;
+  margin-top: -24px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #d5ddef;
+  text-align: left;
+  line-height: 1.55;
+}
+
+@media (max-width: 920px) {
+  .frame {
+    grid-column: span 12;
+  }
+}
