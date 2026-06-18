@@ -1,7 +1,7 @@
 .card {
   grid-column: span 12;
   border-radius: 24px;
-  padding: 22px;
+  padding: clamp(16px, 2vw, 22px);
   border: 1px solid transparent;
   background:
     linear-gradient(180deg, rgba(14, 18, 30, 0.94), rgba(10, 13, 23, 0.94)) padding-box,
@@ -33,12 +33,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  gap: 12px;
 }
 
 .magazineBody {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
-  gap: 24px;
+  gap: clamp(16px, 2vw, 24px);
   align-items: stretch;
 }
 
@@ -67,6 +68,7 @@
   margin: 0 0 16px;
   max-width: 62ch;
   color: #b3bed6;
+  line-height: 1.6;
 }
 
 .downloadCard {
@@ -92,7 +94,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 20px 18px 12px;
+  padding: 18px clamp(12px, 1.5vw, 20px) 18px 12px;
   margin-left: auto;
   background:
     radial-gradient(circle at 20% 18%, rgba(109, 139, 255, 0.12), transparent 28%),
@@ -110,6 +112,7 @@
   isolation: isolate;
   flex: 0 0 auto;
   width: 100%;
+  max-width: 100%;
 }
 
 .paperStack::before {
@@ -128,7 +131,7 @@
 
 .paperStack img {
   width: auto;
-  height: 300px;
+  height: clamp(180px, 28vw, 300px);
   display: block;
   object-fit: cover;
   position: relative;
@@ -145,7 +148,7 @@
 }
 
 .thumbText {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #dce4ff;
@@ -173,15 +176,110 @@
   }
 
   .thumbnail {
-    min-height: 180px;
+    min-height: auto;
+    padding-inline: 12px;
   }
 
   .paperStack {
     margin-left: 0;
+    justify-content: center;
   }
 
   .thumbText {
     margin-right: 0;
+    margin-left: 0;
+  }
+
+  .paperStack img {
+    height: clamp(160px, 45vw, 260px);
+  }
+
+  .cardFoot {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .labelRow {
+    flex-wrap: wrap;
+  }
+
+  .paperStack {
+    gap: 12px;
+  }
+
+  .paperStack img {
+    height: clamp(140px, 40vw, 220px);
+    border-radius: 10px;
+  }
+
+  .cardFoot {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .copy {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .paperStack img {
+    height: clamp(120px, 34vw, 180px);
+  }
+
+  .thumbText {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cardFoot {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .paperStack {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .labelRow {
+    margin-bottom: 8px;
+  }
+
+  .heading {
+    font-size: 1.1rem;
+  }
+
+  .copy {
+    font-size: 0.84rem;
+  }
+
+  .thumbText {
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+  }
+
+  .paperStack img {
+    height: clamp(108px, 31vw, 150px);
+  }
+
+  .cardFoot {
+    padding: 10px 12px;
+    font-size: 0.78rem;
   }
 }
 

@@ -1,4 +1,3 @@
-import { useEffect, useMemo, useRef, useState } from "react";
 import "./Rap.css";
 
 const lyricLines = [
@@ -13,63 +12,20 @@ const lyricLines = [
 ];
 
 export default function Rap() {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-
-  const activeLineIndex = useMemo(() => {
-    const index = lyricLines.findIndex(
-      (line) => currentTime >= line.start && currentTime < line.end
-    );
-    return index === -1 ? lyricLines.length - 1 : index;
-  }, [currentTime]);
-
-  const progress = duration ? Math.min((currentTime / duration) * 100, 100) : 0;
-
-  const toggleAudio = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (audio.paused) {
-      try {
-        await audio.play();
-        setIsPlaying(true);
-      } catch {
-        setIsPlaying(false);
-      }
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const onTimeUpdate = () => setCurrentTime(audio.currentTime || 0);
-    const onLoadedMetaData = () => setDuration(audio.duration || 0);
-
-    audio.addEventListener("timeupdate", onTimeUpdate);
-    audio.addEventListener("loadedmetadata", onLoadedMetaData);
-
-    return () => {
-      audio.removeEventListener("timeupdate", onTimeUpdate);
-      audio.removeEventListener("loadedmetadata", onLoadedMetaData);
-    };
-  }, []);
+  const currentTime = 0;
+  const duration = 0;
+  const progress = 0;
+  const activeLineIndex = 0;
 
   return (
-    <section className={`section ${isPlaying ? "active" : ""}`}>
+    <section className="section">
       <div className="headerRow">
         <div>
           <span className="label">Rap</span>
           <h2 className="heading">Raw Lyrics</h2>
         </div>
-
-        <button className="audioButton" onClick={toggleAudio} type="button">
-          {isPlaying ? "Pause Track" : "Play Track"}
+        <button className="audioButton" type="button" disabled>
+          Track Unavailable
         </button>
       </div>
 
@@ -93,18 +49,6 @@ export default function Rap() {
             </p>
           ))}
         </div>
-
-        <audio
-          ref={audioRef}
-          src="src/assets/rap-track.mp3"
-          preload="metadata"
-          onEnded={() => {
-            setIsPlaying(false);
-            setCurrentTime(0);
-          }}
-          onPause={() => setIsPlaying(false)}
-          onPlay={() => setIsPlaying(true)}
-        />
       </div>
     </section>
   );

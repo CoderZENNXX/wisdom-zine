@@ -11,7 +11,7 @@ export default function Header() {
         <p className="kicker">Wisdom Zine</p>
         <h1 className="title">Arts &amp; Creatives</h1>
         <p className="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          A dark editorial space for poems, drawings, and sound.
         </p>
       </div>
 

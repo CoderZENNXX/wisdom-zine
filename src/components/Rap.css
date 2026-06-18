@@ -50,6 +50,11 @@
   box-shadow: 0 16px 28px rgba(0, 0, 0, 0.26);
 }
 
+.audioButton:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
 .player {
   border-radius: 18px;
   padding: 18px;
@@ -110,5 +115,73 @@
 @media (max-width: 920px) {
   .lyricsGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .audioButton {
+    width: 100%;
+  }
+
+  .player {
+    padding: 14px;
+  }
+
+  .timeRow {
+    font-size: 0.84rem;
+  }
+
+  .lyricLine {
+    padding: 9px 10px;
+    font-size: 0.93rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 14px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .player {
+    padding: 12px;
+  }
+
+  .progressTrack {
+    height: 8px;
+  }
+
+  .timeRow {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .lyricLine {
+    padding: 8px 9px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .heading {
+    font-size: 1.05rem;
+  }
+
+  .lyricLine {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .audioButton {
+    padding: 9px 12px;
+    font-size: 0.82rem;
   }
 }

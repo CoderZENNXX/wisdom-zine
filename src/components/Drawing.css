@@ -36,7 +36,7 @@
   margin: 0px 6px 0;
   margin-top: -24px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: clamp(0.92rem, 1vw, 1rem);
   color: #d5ddef;
   text-align: left;
   line-height: 1.55;
@@ -45,5 +45,43 @@
 @media (max-width: 920px) {
   .frame {
     grid-column: span 12;
+  }
+
+  .polaroid {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .imageWrap {
+    border-width: 10px;
+    border-bottom-width: 36px;
+  }
+
+  .caption {
+    margin-top: -18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .polaroid {
+    padding: 12px 12px 14px;
+  }
+
+  .caption {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .imageWrap {
+    border-width: 8px;
+    border-bottom-width: 28px;
+  }
+
+  .caption {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }

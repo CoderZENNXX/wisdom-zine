@@ -1,10 +1,6 @@
-import { useRef, useState } from "react";
 import "./Poem.css";
 
 export default function Poem() {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
   const poemLines = [
     "The dragon is brave enough,",
     "Developments what eagle does,",
@@ -19,34 +15,17 @@ export default function Poem() {
     "- Hsu Won Yan Moe",
   ];
 
-  const toggleAudio = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (audio.paused) {
-      try {
-        await audio.play();
-        setIsPlaying(true);
-      } catch {
-        setIsPlaying(false);
-      }
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
-  };
-
   return (
     <section className="section">
       <div className="headerRow">
-        <span className="label">Political Poem</span>
-        <button className="audioButton" onClick={toggleAudio} type="button">
-          {isPlaying ? "Pause Recitation" : "Play Recitation"}
+        <span className="label">Poem</span>
+        <button className="audioButton" type="button" disabled>
+          Recitation Unavailable
         </button>
       </div>
 
       <div className="paper">
-        <h2 className="heading">Lorem Ipsum</h2>
+        <h2 className="heading">Notebook Poem</h2>
         <pre className="poem">
           {poemLines.map((line, index) =>
             line === "" ? (
@@ -63,14 +42,6 @@ export default function Poem() {
           )}
         </pre>
 
-        <audio
-          ref={audioRef}
-          src="src/assets/poem-audio.mp3"
-          preload="metadata"
-          onEnded={() => setIsPlaying(false)}
-          onPause={() => setIsPlaying(false)}
-          onPlay={() => setIsPlaying(true)}
-        />
       </div>
     </section>
   );

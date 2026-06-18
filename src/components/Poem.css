@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+  gap: 12px;
 }
 
 .label {
@@ -31,13 +32,18 @@
   box-shadow: 0 16px 28px rgba(0, 0, 0, 0.26);
 }
 
+.audioButton:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
 .audioButton:hover {
   transform: translateY(-1px);
 }
 
 .paper {
   border-radius: 22px;
-  padding: 22px;
+  padding: clamp(16px, 2vw, 22px);
   min-height: 100%;
   border: 1px solid rgba(132, 156, 255, 0.16);
   background:
@@ -79,5 +85,95 @@
 @media (max-width: 920px) {
   .section {
     grid-column: span 12;
+  }
+
+  .lyricsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .audioButton {
+    width: 100%;
+  }
+
+  .paper {
+    padding: 14px;
+  }
+
+  .poem {
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+}
+
+@media (max-width: 560px) {
+  .paper {
+    padding: 12px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .poem {
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .poemBlankLine {
+    height: 1.8em;
+  }
+
+  .audioButton {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .heading {
+    font-size: 1.08rem;
+  }
+
+  .poem {
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  .poemSignatureLine {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .paper {
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+
+  .poem {
+    width: 92%;
+    margin-inline: auto;
+    font-size: 0.74rem;
+    line-height: 1.55;
+  }
+
+  .poemBlankLine {
+    height: 1.55em;
+  }
+
+  .poemSignatureLine {
+    font-size: 0.74rem;
   }
 }

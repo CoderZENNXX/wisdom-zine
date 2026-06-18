@@ -1,4 +1,5 @@
 import "./Drawing.css";
+import drawingImage from "../assets/drawing.png";
 
 export default function Drawing() {
   return (
@@ -7,8 +8,8 @@ export default function Drawing() {
         <div className="imageWrap">
           <img
             className="image"
-            src="src/assets/drawing.png"
-            alt="Digital drawing placeholder"
+            src={drawingImage}
+            alt="Digital drawing of a stylized titan"
           />
         </div>
 
