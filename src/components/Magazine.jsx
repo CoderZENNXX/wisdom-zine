@@ -1,6 +1,7 @@
 import "./Magazine.css";
 import magazinePdf from "../assets/magazine.pdf";
 import magazineFrontCover from "../assets/magazine-front-cover.png";
+import magazineBackCover from "../assets/magazine-back-cover.png";
 
 export default function Magazine() {
   return (
@@ -38,7 +39,7 @@ export default function Magazine() {
             </span>
             <span>
               <img
-                src={magazineFrontCover}
+                src={magazineBackCover}
                 alt="Magazine Back Thumbnail"
               />
             </span>

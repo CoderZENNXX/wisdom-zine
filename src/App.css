@@ -68,6 +68,35 @@ body {
   opacity: 0.08;
 }
 
+.pageNav {
+  width: min(1280px, calc(100vw - clamp(24px, 4vw, 56px)));
+  margin: 0 auto 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.navButton {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 12, 22, 0.8);
+  color: #dfe6f7;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.navButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(109, 139, 255, 0.4);
+}
+
+.navButton.active {
+  background: linear-gradient(135deg, rgba(109, 139, 255, 0.28), rgba(55, 215, 192, 0.2));
+  border-color: rgba(109, 139, 255, 0.4);
+  color: #f5f8ff;
+}
+
 .mainGrid {
   width: min(1280px, calc(100vw - clamp(24px, 4vw, 56px)));
   margin: 0 auto;
@@ -99,6 +128,10 @@ body {
 @media (max-width: 920px) {
   .appShell {
     padding: 16px;
+  }
+
+  .pageNav {
+    justify-content: center;
   }
 
   .mainGrid > :nth-child(n) {

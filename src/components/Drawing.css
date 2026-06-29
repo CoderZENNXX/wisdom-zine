@@ -1,5 +1,9 @@
 .frame {
   grid-column: span 5;
+  width: min(100%, 1422px);
+  max-width: 1422px;
+  aspect-ratio: 1422 / 975;
+  justify-self: center;
 }
 
 .polaroid {
@@ -15,7 +19,7 @@
 }
 
 .imageWrap {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1422 / 975;
   border: 12px solid rgba(255, 255, 255, 0.04);
   border-bottom-width: 44px;
   border-radius: 14px;
